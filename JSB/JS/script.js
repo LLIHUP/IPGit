@@ -46,14 +46,49 @@
 // const user = 'Sasha';
 // alert(`Привет, ${user}`);
 
-console.log('arr' + "obj");
-console.log(4 + +"10");
+// console.log('arr' + "obj");
+// console.log(4 + +"10");
 
-let incr = 10,
-    decr = 10;
+// let incr = 10,
+//     decr = 10;
 
-// incr++;
-// decr--;
+// // incr++;
+// // decr--;
 
-console.log(incr++);
-console.log(decr--);
+// console.log(incr++);
+// console.log(decr--);
+
+// if (4 == 9) {
+//     console.log('ok');
+// } else {
+//     console.log('Error');
+// }
+
+
+
+// if (num < 49) {
+//     console.log('Error');
+// } else if (num > 100) {
+//     console.log('Много');
+// } else {
+//     console.log('Ok!');
+// }
+
+// (num === 50) ? console.log('Ok!'): console.log('Error');
+
+
+const num = '50';
+
+switch (num) {
+    case '49':
+        console.log('Не верно');
+        break;
+    case '100':
+        console.log('Опять не верно');
+        break;
+    case '50':
+        console.log('В точку!');
+        break;
+    default:
+        console.log('Не в этот раз');
+}
