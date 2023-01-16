@@ -77,18 +77,84 @@
 // (num === 50) ? console.log('Ok!'): console.log('Error');
 
 
-const num = '50';
+// const num = '50';
 
-switch (num) {
-    case '49':
-        console.log('Не верно');
-        break;
-    case '100':
-        console.log('Опять не верно');
-        break;
-    case '50':
-        console.log('В точку!');
-        break;
-    default:
-        console.log('Не в этот раз');
+// switch (num) {
+//     case '49':
+//         console.log('Не верно');
+//         break;
+//     case '100':
+//         console.log('Опять не верно');
+//         break;
+//     case '50':
+//         console.log('В точку!');
+//         break;
+//     default:
+//         console.log('Не в этот раз');
+// }
+
+// const hamburger = 5;
+// const fries = 0;
+// if (hamburger && fries) {
+//     console.log('я сыт!');
+// } 
+
+
+// const hamburger = 3;
+// const fries = 1;
+// const cola = 0;
+
+// console.log(hamburger === 3 && cola && fries === 1);
+// console.log(1 && 0);
+// console.log(1 && 5);
+// console.log(null && 5);
+// console.log(0 && 'fjdsgfhdsg');
+// if (hamburger === 3 && cola === 1 && fries === 1) {
+//     console.log('Все сыты!');
+// } else {
+//     console.log('Мы уходим!');
+// }
+
+const hamburger = 3;
+const fries = 3;
+const cola = 0;
+const nuggets = 2;
+
+
+if (hamburger === 3 && cola === 2 || fries === 3 && nuggets) {
+    console.log('Все сыты!');
+} else {
+    console.log('Мы уходим!');
+}
+
+console.log((hamburger === 3 && cola === 2 || fries === 3 && nuggets));
+
+let johnReport, alexReport, samReport, mariReport = 'done';
+
+console.log(johnReport || alexReport || samReport || mariReport)
+
+
+console.log(NaN || 2 || undefined);
+
+console.log(NaN && 2 && undefined);
+
+console.log(1 && 2 && 3);
+
+console.log(!1 && 2 || !3);
+
+console.log(25 || null && !3);
+
+console.log(NaN || null || !3 || undefined || 5);
+
+console.log(NaN || null && !3 && undefined || 5);
+
+console.log(5 === 5 && 3 > 1 || 5);
+
+const hamburger = 3;
+const fries = 2;
+const cola = 0;
+const nuggets = 2;
+
+if (hamburger === 3 && cola || fries === 3 && nuggets) {
+    console.log('Done!')
 }
