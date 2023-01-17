@@ -115,46 +115,120 @@
 //     console.log('Мы уходим!');
 // }
 
-const hamburger = 3;
-const fries = 3;
-const cola = 0;
-const nuggets = 2;
+// const hamburger = 3;
+// const fries = 3;
+// const cola = 0;
+// const nuggets = 2;
 
 
-if (hamburger === 3 && cola === 2 || fries === 3 && nuggets) {
-    console.log('Все сыты!');
-} else {
-    console.log('Мы уходим!');
+// if (hamburger === 3 && cola === 2 || fries === 3 && nuggets) {
+//     console.log('Все сыты!');
+// } else {
+//     console.log('Мы уходим!');
+// }
+
+// console.log((hamburger === 3 && cola === 2 || fries === 3 && nuggets));
+
+// let johnReport, alexReport, samReport, mariReport = 'done';
+
+// console.log(johnReport || alexReport || samReport || mariReport)
+
+
+// console.log(NaN || 2 || undefined);
+
+// console.log(NaN && 2 && undefined);
+
+// console.log(1 && 2 && 3);
+
+// console.log(!1 && 2 || !3);
+
+// console.log(25 || null && !3);
+
+// console.log(NaN || null || !3 || undefined || 5);
+
+// console.log(NaN || null && !3 && undefined || 5);
+
+// console.log(5 === 5 && 3 > 1 || 5);
+
+// const hamburger = 3;
+// const fries = 3;
+// const cola = 0;
+// const nuggets = 2;
+
+// if (hamburger === 3 && cola || fries === 3 && nuggets) {
+//     console.log('Done!')
+// }
+
+// let hamburger;
+// const fries = NaN;
+// const cola = 0;
+// const nuggets = 2;
+
+// if (hamburger || cola || fries === 3 || nuggets) {
+//    console.log('Done!')
+// }
+// let hamburger;
+// const fries = NaN;
+// const cola = 0;
+// const nuggets = 2;
+
+// if (hamburger && cola || fries === 3 && nuggets) {
+//    console.log('Done!')
+// }
+
+
+let num = 50;
+// while (num <= 55) {
+//     console.log(num);
+//     num++;
+// }
+
+// do {
+//     console.log(num);
+//     num++;
+// }
+
+// while (num < 55);
+
+// for (let i = 1; i < 10; i++) {
+//     if (i === 6) {
+//         // break;
+//         continue;
+//     }
+
+//     console.log(i);
+
+// }
+
+
+for (let i = 0; i < 3; i++) {
+    console.log(i);
+    for (let j = 0; j < 3; j++) {
+        console.log(j);
+    }
+};
+
+let result = '';
+const lengh = 7;
+
+for (let i = 1; i < lengh; i++) {
+    for (let j = 0; j < i; j++) {
+
+        result += '*';
+
+    }
+    result += '\n';
 }
 
-console.log((hamburger === 3 && cola === 2 || fries === 3 && nuggets));
+console.log(result);
 
-let johnReport, alexReport, samReport, mariReport = 'done';
-
-console.log(johnReport || alexReport || samReport || mariReport)
-
-
-console.log(NaN || 2 || undefined);
-
-console.log(NaN && 2 && undefined);
-
-console.log(1 && 2 && 3);
-
-console.log(!1 && 2 || !3);
-
-console.log(25 || null && !3);
-
-console.log(NaN || null || !3 || undefined || 5);
-
-console.log(NaN || null && !3 && undefined || 5);
-
-console.log(5 === 5 && 3 > 1 || 5);
-
-const hamburger = 3;
-const fries = 2;
-const cola = 0;
-const nuggets = 2;
-
-if (hamburger === 3 && cola || fries === 3 && nuggets) {
-    console.log('Done!')
-}
+first: for (let i = 0; i < 3; i++) {
+    console.log(`first level: ${i}`);
+    for (let j = 0; j < 3; j++) {
+        console.log(`second level: ${j}`);
+        for (let k = 0; k < 3; k++) {
+            if (k === 2) continue first;
+            console.log(`third level: ${k}`);
+        }
+    }
+};
