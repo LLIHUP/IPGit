@@ -188,6 +188,35 @@
 // const res = getMathResult;
 // console.log(res(50, 'ggg'));
 
+// метод
+// строки
+const str = 'teSt';
+const arr = [1, 2, 3];
+// console.log(arr.length);
+// console.log(str[2] = 'd');
+console.log(str.toUpperCase());
+console.log(str.toLocaleLowerCase());
+console.log(str);
 
-const str = 'test';
-console.log(str.length)
+let fruit = 'Some fruit';
+
+console.log(fruit.indexOf('fruit'));
+
+
+const logg = 'Hello World';
+// console.log(logg.slice(6, 11));
+// console.log(logg.slice(6));
+// console.log(logg.slice(-5, -1));
+
+// console.log(logg.substring(5, 2));
+console.log(logg.substr(3, 5));
+
+// Числа
+
+
+const num = 12.2;
+console.log(Math.round(num));
+
+const test = '12.2px';
+console.log(parseInt(test));
+console.log(parseFloat(test));
