@@ -144,46 +144,50 @@
 // }
 // test();
 
-function sayHello(name) {
+// function sayHello(name) {
 
-    return `Привет, ${name}!`;
-
-
-};
-sayHello('Саша');
-console.log(sayHello);
-
-function returnNeighboringNumbers(num) {
-    // console.log([num - 1, num, num + 1]);
-    return [num - 1, num, num + 1];
+//     return `Привет, ${name}!`;
 
 
-}
-returnNeighboringNumbers(5);
-console.log(returnNeighboringNumbers(5));
+// };
+// sayHello('Саша');
+// console.log(sayHello);
 
-function getMathResult(num, times) {
-    if (typeof(times) !== 'number' || times <= 0) {
-        return num;
-    }
+// function returnNeighboringNumbers(num) {
+//     // console.log([num - 1, num, num + 1]);
+//     return [num - 1, num, num + 1];
 
-    let str = '';
 
-    for (let i = 1; i <= times; i++) {
-        if (i === times) {
-            str += `${num * i}`;
+// }
+// // returnNeighboringNumbers(5);
+// console.log(returnNeighboringNumbers(5));
 
-        } else {
-            str += `${num * i}---`;
+// function getMathResult(num, times) {
+//     if (typeof(times) !== 'number' || times <= 0) {
+//         return num;
+//     }
 
-        }
+//     let str = '';
 
-    }
+//     for (let i = 1; i <= times; i++) {
+//         if (i === times) {
+//             str += `${num * i}`;
 
-    return str;
-}
+//         } else {
+//             str += `${num * i}---`;
 
-console.log(getMathResult(5, 50));
+//         }
 
-const res = getMathResult;
-console.log(res(5, 50));
+//     }
+
+//     return str;
+// }
+
+// console.log(getMathResult(5, 25));
+
+// const res = getMathResult;
+// console.log(res(50, 'ggg'));
+
+
+const str = 'test';
+console.log(str.length)
