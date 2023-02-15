@@ -300,53 +300,126 @@
 
 
 
-function calculateVolumeAndArea(H) {
-    if (typeof(H) !== 'number' || H < 0 || !Number.isInteger(H)) {
-        return "При вычислении произошла ошибка";
+// function calculateVolumeAndArea(H) {
+//     if (typeof(H) !== 'number' || H < 0 || !Number.isInteger(H)) {
+//         return "При вычислении произошла ошибка";
+//     }
+
+//     let volume = 0,
+//         area = 0;
+
+//     volume = H * H * H;
+
+//     area = 6 * (H * H);
+
+//     return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+// }
+
+// calculateVolumeAndArea(5);
+
+// //console.log(calculateVolumeAndArea(5));
+
+
+// function getCoupeNumber(Seat) {
+//     if (typeof(Seat) !== 'number' || Seat < 0 || !Number.isInteger(Seat)) {
+//         return 'Ошибка. Проверьте правильность введенного номера места';
+//     } else if (Seat === 0 || Seat > 36) {
+//         return 'Таких мест в вагоне не существует';
+//     } else if (Seat >= 1 && Seat <= 4) {
+//         return '1';
+//     } else if (Seat >= 5 && Seat <= 8) {
+//         return '2';
+//     } else if (Seat >= 9 && Seat <= 12) {
+//         return '3';
+//     } else if (Seat >= 13 && Seat <= 16) {
+//         return '4';
+//     } else if (Seat >= 17 && Seat <= 20) {
+//         return '5';
+//     } else if (Seat >= 21 && Seat <= 24) {
+//         return '6';
+//     } else if (Seat >= 25 && Seat <= 28) {
+//         return '7';
+//     } else if (Seat >= 29 && Seat <= 32) {
+//         return '8';
+//     } else if (Seat >= 33 && Seat <= 36) {
+//         return '9';
+//     }
+// }
+
+
+
+// //console.log(getCoupeNumber(36));
+// getCoupeNumber(6);
+
+function getTimeFromMinutes(Minut) {
+    if (typeof(Minut) !== 'number' || Minut < 0 || !Number.isInteger(Minut) || Minut > 600) {
+        return 'Ошибка, проверьте данные';
     }
 
-    let volume = 0,
-        area = 0;
+    const hours = Math.trunc(Minut / 60);
+    const minutes = Minut % 60;
 
-    volume = H * H * H;
+    let hoursStr = '';
+    switch (hours) {
+        case 0:
+            hoursStr = 'часов';
+            break;
+        case 1:
+            hoursStr = 'час';
+            break;
+        case 2:
+        case 3:
+        case 4:
+            hoursStr = 'часа';
+            break;
+        default:
+            hoursStr = 'часов';
+    }
 
-    area = 6 * (H * H);
-
-    return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+    return `Это ${hours} ${hoursStr} и ${minutes} минут`;
+    //return `Это ${hours} часа и ${minutes} минут`;
+    // Это 2 часа и 30 минут
 }
+console.log(getTimeFromMinutes(61));
 
-calculateVolumeAndArea(5);
-
-//console.log(calculateVolumeAndArea(5));
-
-
-function getCoupeNumber(Seat) {
-    if (typeof(Seat) !== 'number' || Seat < 0 || !Number.isInteger(Seat)) {
-        return 'Ошибка. Проверьте правильность введенного номера места';
-    } else if (Seat === 0 || Seat > 36) {
-        return 'Таких мест в вагоне не существует';
-    } else if (Seat >= 1 && Seat <= 4) {
-        return '1';
-    } else if (Seat >= 5 && Seat <= 8) {
-        return '2';
-    } else if (Seat >= 9 && Seat <= 12) {
-        return '3';
-    } else if (Seat >= 13 && Seat <= 16) {
-        return '4';
-    } else if (Seat >= 17 && Seat <= 20) {
-        return '5';
-    } else if (Seat >= 21 && Seat <= 24) {
-        return '6';
-    } else if (Seat >= 25 && Seat <= 28) {
-        return '7';
-    } else if (Seat >= 29 && Seat <= 32) {
-        return '8';
-    } else if (Seat >= 33 && Seat <= 36) {
-        return '9';
+function findMaxNumber(a, b, c, d) {
+    if (typeof(a) !== 'number' ||
+        typeof(b) !== 'number' ||
+        typeof(c) !== 'number' ||
+        typeof(d) !== 'number') {
+        return 0;
+    } else {
+        return Math.max(a, b, c, d);
     }
 }
 
+console.log(findMaxNumber(1, 2, 5.4, 4));
 
 
-//console.log(getCoupeNumber(36));
-getCoupeNumber(6);
+
+function fib(num) {
+    if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+        return "";
+    }
+
+    let result = '';
+    let first = 0;
+    let second = 1;
+
+    for (let i = 0; i < num; i++) {
+        if (i + 1 === num) {
+            result += `${first}`;
+            // Без пробела в конце
+        } else {
+            result += `${first} `;
+        }
+
+        let third = first + second;
+        first = second;
+        second = third;
+    }
+
+    return result;
+}
+
+console.log(fib(5))
