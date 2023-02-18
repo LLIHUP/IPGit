@@ -406,20 +406,21 @@ function fib(num) {
     let first = 0;
     let second = 1;
 
-    for (let i = 0; i < num; i++) {
+    for (let i = 0; i < num; i++) { // i=1
         if (i + 1 === num) {
             result += `${first}`;
             // Без пробела в конце
         } else {
-            result += `${first} `;
+            result += `${first} `; // 0 1
         }
 
-        let third = first + second;
-        first = second;
-        second = third;
+        // let third = first + second; // 1
+        let third = first + first + second; //
+        //first = second; // 0 1 2
+        //second = third; // 1 1 1
     }
 
     return result;
 }
 
-console.log(fib(5))
+console.log(fib(5));
