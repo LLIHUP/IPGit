@@ -351,76 +351,127 @@
 // //console.log(getCoupeNumber(36));
 // getCoupeNumber(6);
 
-function getTimeFromMinutes(Minut) {
-    if (typeof(Minut) !== 'number' || Minut < 0 || !Number.isInteger(Minut) || Minut > 600) {
-        return 'Ошибка, проверьте данные';
-    }
+// function getTimeFromMinutes(Minut) {
+//     if (typeof(Minut) !== 'number' || Minut < 0 || !Number.isInteger(Minut) || Minut > 600) {
+//         return 'Ошибка, проверьте данные';
+//     }
 
-    const hours = Math.trunc(Minut / 60);
-    const minutes = Minut % 60;
+//     const hours = Math.trunc(Minut / 60);
+//     const minutes = Minut % 60;
 
-    let hoursStr = '';
-    switch (hours) {
-        case 0:
-            hoursStr = 'часов';
-            break;
-        case 1:
-            hoursStr = 'час';
-            break;
-        case 2:
-        case 3:
-        case 4:
-            hoursStr = 'часа';
-            break;
-        default:
-            hoursStr = 'часов';
-    }
+//     let hoursStr = '';
+//     switch (hours) {
+//         case 0:
+//             hoursStr = 'часов';
+//             break;
+//         case 1:
+//             hoursStr = 'час';
+//             break;
+//         case 2:
+//         case 3:
+//         case 4:
+//             hoursStr = 'часа';
+//             break;
+//         default:
+//             hoursStr = 'часов';
+//     }
 
-    return `Это ${hours} ${hoursStr} и ${minutes} минут`;
-    //return `Это ${hours} часа и ${minutes} минут`;
-    // Это 2 часа и 30 минут
+//     return `Это ${hours} ${hoursStr} и ${minutes} минут`;
+//     //return `Это ${hours} часа и ${minutes} минут`;
+//     // Это 2 часа и 30 минут
+// }
+// console.log(getTimeFromMinutes(61));
+
+// function findMaxNumber(a, b, c, d) {
+//     if (typeof(a) !== 'number' ||
+//         typeof(b) !== 'number' ||
+//         typeof(c) !== 'number' ||
+//         typeof(d) !== 'number') {
+//         return 0;
+//     } else {
+//         return Math.max(a, b, c, d);
+//     }
+// }
+
+// console.log(findMaxNumber(1, 2, 5.4, 4));
+
+
+
+// function fib(num) {
+//     if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+//         return "";
+//     }
+
+//     let result = '';
+//     let first = 0;
+//     let second = 1;
+
+//     for (let i = 0; i < num; i++) { // i=8
+//         if (i + 1 === num) {
+//             result += `${first}`;
+//             // Без пробела в конце
+//         } else {
+//             result += `${first} `; // 0 1 1 2 3 5 8 13 21
+//         }
+
+//          let third = first + second; // 1 2 3 5 8 13 21 34 55
+
+//         first = second; // 1 1 2 3 5 8  13 21 34
+//         second = third; // 1 2 3 5 8 13 21 34 55
+//     }
+
+//     return result;
+// }
+
+// console.log(fib(9));
+
+// let numberOfFilms;
+
+// function start() {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+//     }
+// }
+// start();
+//console.log(start());
+
+// const personalMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false
+// };
+
+
+
+// function rememberMyFilms() {
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt('Один из последних просмотренных фильмов?', '').trim(),
+//             b = prompt('На сколько оцените его?', '');
+//         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//             personalMovieDB.movies[a] = b;
+//             console.log('done');
+//         } else {
+//             console.log('error');
+//             i--;
+//         }
+
+//     }
+// }
+// rememberMyFilms();
+// //console.log(rememberMyFilms());
+// console.log(personalMovieDB);
+
+function learnJS(lang, callback) {
+    console.log(`я учу: ${lang}`);
+    callback();
 }
-console.log(getTimeFromMinutes(61));
 
-function findMaxNumber(a, b, c, d) {
-    if (typeof(a) !== 'number' ||
-        typeof(b) !== 'number' ||
-        typeof(c) !== 'number' ||
-        typeof(d) !== 'number') {
-        return 0;
-    } else {
-        return Math.max(a, b, c, d);
-    }
+function done() {
+    console.log('Я прошел этот урок!');
 }
 
-console.log(findMaxNumber(1, 2, 5.4, 4));
-
-
-
-function fib(num) {
-    if (typeof(num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
-        return "";
-    }
-
-    let result = '';
-    let first = 0;
-    let second = 1;
-
-    for (let i = 0; i < num; i++) { // i=1
-        if (i + 1 === num) {
-            result += `${first}`;
-            // Без пробела в конце
-        } else {
-            result += `${first} `; // 0 1
-        }
-
-        // let third = first + second; // 1
-        let third = first + first + second; //
-        //first = second; // 0 1 2
-        //second = third; // 1 1 1
-    }
-
-    return result;
-}
-
-console.log(fib(5));
+learnJS('JS', done);
