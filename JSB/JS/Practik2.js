@@ -550,86 +550,231 @@
 // console.log(product.join('; '));
 
 
-let a = 5,
-    b = a;
-b = b + a;
-console.log(b);
-console.log(a);
+// let a = 5,
+//     b = a;
+// b = b + a;
+// console.log(b);
+// console.log(a);
 
-const obj = {
-    a: 5,
-    b: 1
-};
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
 // const copy = obj; //ссылка
 // copy.a = 10;
 // console.log(copy);
 // console.log(obj);
 
-function copy(mainObj) {
-    let objCopy = {};
-    let key;
-    for (key in mainObj) {
-        objCopy[key] = mainObj[key];
-    }
-    return objCopy;
-}
+// function copy(mainObj) {
+//     let objCopy = {};
+//     let key;
+//     for (key in mainObj) {
+//         objCopy[key] = mainObj[key];
+//     }
+//     return objCopy;
+// }
 
-const numbers = {
-    a: 2,
-    b: 5,
-    c: {
-        x: 7,
-        y: 4
-    }
-};
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4
+//     }
+// };
 
-const newNumbers = copy(numbers);
-newNumbers.a = 10;
-console.log(newNumbers);
-console.log(numbers);
+// const newNumbers = copy(numbers);
+// newNumbers.a = 10;
+// console.log(newNumbers);
+// console.log(numbers);
 
 
-const add = {
-    d: 17,
-    e: 20
-};
+// const add = {
+//     d: 17,
+//     e: 20
+// };
 
 //console.log(Object.assign(numbers, add));
-const clone = Object.assign({}, add);
+// const clone = Object.assign({}, add);
 
-clone.d = 20;
+// clone.d = 20;
 // console.log(add);
 // console.log(clone);
 
-const oldArr = ['a', 'b', 'c'];
-const newArr = oldArr.slice();
-newArr[1] = 'asasa';
-console.log(newArr);
-console.log(oldArr);
+// const oldArr = ['a', 'b', 'c'];
+// const newArr = oldArr.slice();
+// newArr[1] = 'asasa';
+// console.log(newArr);
+// console.log(oldArr);
 
-const video = ['youtube', 'vimeo', 'rutube'],
-    blogs = ['wordpress', 'livejournal', 'blogger'],
-    internet = [...video, ...blogs, 'inst', 'facebook'];
-console.log(internet);
+// const video = ['youtube', 'vimeo', 'rutube'],
+//     blogs = ['wordpress', 'livejournal', 'blogger'],
+//     internet = [...video, ...blogs, 'inst', 'facebook'];
+// console.log(internet);
 
-function log(a, b, c) {
-    console.log(a);
-    console.log(b);
-    console.log(c);
+// function log(a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+
+// }
+
+// const num = [2, 5, 7];
+
+
+// log(...num);
+
+
+// const array = ['a', 'b'];
+// const newArray = [...array];
+// console.log(newArray);
+
+// const q = {
+//     one: 1,
+//     two: 2
+// };
+
+// const newObj ={...q};
+
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs: function(plan) {
+        const { age } = plan;
+        const { languages } = plan.skills;
+        let str = `Мне ${age} и я владею языками: `;
+
+        languages.forEach(function(lang) {
+            str += `${lang.toUpperCase()} `;
+        });
+
+        return str;
+    }
+};
+
+
+// personalPlanPeter.showAgeAndLangs(personalPlanPeter);
+console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+
+function showExperience(plan) {
+    return plan.skills.exp;
 
 }
 
-const num = [2, 5, 7];
+console.log(showExperience(personalPlanPeter));
 
 
-log(...num);
 
 
-const array = ['a', 'b'];
-const newArray = [...array];
-console.log(newArray);
+function showProgrammingLangs(plan) {
+    let str = '';
+    const { programmingLangs } = plan.skills;
+    for (let key in programmingLangs) {
+        str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+    }
 
-const q = {
-    one: 1,
-    two: 2
-};
+    return str;
+}
+
+console.log(showProgrammingLangs(personalPlanPeter));
+
+
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+const test = [];
+
+function showFamily(arr) {
+    let str = '';
+    if (arr.length === 0) {
+        return str += `Семья пуста`;
+    } else {
+        str += `Семья состоит из:`;
+    }
+
+    for (let key of arr) {
+        str += ` ${key}`;
+    }
+
+    return str;
+
+}
+console.log(showFamily(test));
+console.log(showFamily(family));
+
+
+
+
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+// function standardizeStrings(arr) {
+//     arr.forEach(city => {
+//         console.log(city.toLowerCase())
+//     })
+// }
+
+// standardizeStrings(favoriteCities);
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+    arr.forEach(function(city, index) {
+        console.log(index, city.toLocaleLowerCase());
+    });
+}
+
+standardizeStrings(favoriteCities);
+
+const myArray = ['foo', 'bar', 'baz'];
+myArray.forEach(function(item, index) {
+    console.log(index, item);
+});
+
+
+const someString = 'This is some strange string';
+
+function reverse(str) {
+    if (typeof(str) !== 'string') {
+        return "Ошибка!";
+    }
+    const arr = str.split('');
+    const reversedArr = arr.reverse();
+    const reversedStr = reversedArr.join('');
+
+    return reversedStr;
+
+}
+reverse(someString);
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr) {
+    let str = '';
+    arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+
+    arr.forEach(function(curr, i) {
+        if (curr !== missingCurr) {
+            str += `${curr}\n`;
+        }
+    });
+
+    // Или
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] === missingCurr) {
+    //         continue;
+    //     }
+    //     str += `${arr[i]}\n`;
+    // }
+
+    return str;
+}
+
+console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY'));
