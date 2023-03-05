@@ -637,144 +637,179 @@
 // const newObj ={...q};
 
 
-const personalPlanPeter = {
-    name: "Peter",
-    age: "29",
-    skills: {
-        languages: ['ru', 'eng'],
-        programmingLangs: {
-            js: '20%',
-            php: '10%'
-        },
-        exp: '1 month'
-    },
-    showAgeAndLangs: function(plan) {
-        const { age } = plan;
-        const { languages } = plan.skills;
-        let str = `Мне ${age} и я владею языками: `;
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%'
+//         },
+//         exp: '1 month'
+//     },
+//     showAgeAndLangs: function(plan) {
+//         const { age } = plan;
+//         const { languages } = plan.skills;
+//         let str = `Мне ${age} и я владею языками: `;
 
-        languages.forEach(function(lang) {
-            str += `${lang.toUpperCase()} `;
-        });
+//         languages.forEach(function(lang) {
+//             str += `${lang.toUpperCase()} `;
+//         });
 
-        return str;
-    }
-};
-
-
-// personalPlanPeter.showAgeAndLangs(personalPlanPeter);
-console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
-
-function showExperience(plan) {
-    return plan.skills.exp;
-
-}
-
-console.log(showExperience(personalPlanPeter));
+//         return str;
+//     }
+// };
 
 
+// // personalPlanPeter.showAgeAndLangs(personalPlanPeter);
+// console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
 
+// function showExperience(plan) {
+//     return plan.skills.exp;
 
-function showProgrammingLangs(plan) {
-    let str = '';
-    const { programmingLangs } = plan.skills;
-    for (let key in programmingLangs) {
-        str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
-    }
+// }
 
-    return str;
-}
-
-console.log(showProgrammingLangs(personalPlanPeter));
-
-
-const family = ['Peter', 'Ann', 'Alex', 'Linda'];
-const test = [];
-
-function showFamily(arr) {
-    let str = '';
-    if (arr.length === 0) {
-        return str += `Семья пуста`;
-    } else {
-        str += `Семья состоит из:`;
-    }
-
-    for (let key of arr) {
-        str += ` ${key}`;
-    }
-
-    return str;
-
-}
-console.log(showFamily(test));
-console.log(showFamily(family));
+// console.log(showExperience(personalPlanPeter));
 
 
 
+
+// function showProgrammingLangs(plan) {
+//     let str = '';
+//     const { programmingLangs } = plan.skills;
+//     for (let key in programmingLangs) {
+//         str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+//     }
+
+//     return str;
+// }
+
+// console.log(showProgrammingLangs(personalPlanPeter));
+
+
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+// const test = [];
+
+// function showFamily(arr) {
+//     let str = '';
+//     if (arr.length === 0) {
+//         return str += `Семья пуста`;
+//     } else {
+//         str += `Семья состоит из:`;
+//     }
+
+//     for (let key of arr) {
+//         str += ` ${key}`;
+//     }
+
+//     return str;
+
+// }
+// console.log(showFamily(test));
+// console.log(showFamily(family));
+
+
+
+
+// // const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+// // function standardizeStrings(arr) {
+// //     arr.forEach(city => {
+// //         console.log(city.toLowerCase())
+// //     })
+// // }
+
+// // standardizeStrings(favoriteCities);
 
 // const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
 
 // function standardizeStrings(arr) {
-//     arr.forEach(city => {
-//         console.log(city.toLowerCase())
-//     })
+//     arr.forEach(function(city, index) {
+//         console.log(index, city.toLocaleLowerCase());
+//     });
 // }
 
 // standardizeStrings(favoriteCities);
 
-const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
-
-function standardizeStrings(arr) {
-    arr.forEach(function(city, index) {
-        console.log(index, city.toLocaleLowerCase());
-    });
-}
-
-standardizeStrings(favoriteCities);
-
-const myArray = ['foo', 'bar', 'baz'];
-myArray.forEach(function(item, index) {
-    console.log(index, item);
-});
+// const myArray = ['foo', 'bar', 'baz'];
+// myArray.forEach(function(item, index) {
+//     console.log(index, item);
+// });
 
 
-const someString = 'This is some strange string';
+// const someString = 'This is some strange string';
 
-function reverse(str) {
-    if (typeof(str) !== 'string') {
-        return "Ошибка!";
+// function reverse(str) {
+//     if (typeof(str) !== 'string') {
+//         return "Ошибка!";
+//     }
+//     const arr = str.split('');
+//     const reversedArr = arr.reverse();
+//     const reversedStr = reversedArr.join('');
+
+//     return reversedStr;
+
+// }
+// reverse(someString);
+
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+// console.log([...baseCurrencies, ...additionalCurrencies]);
+
+// function availableCurr(arr, missingCurr) {
+//     let str = '';
+//     arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+
+//     arr.forEach(function(curr, i) {
+//         if (curr !== missingCurr) {
+//             str += `${curr}\n`;
+//         }
+//     });
+
+//     // Или
+//     // for (let i = 0; i < arr.length; i++) {
+//     //     if (arr[i] === missingCurr) {
+//     //         continue;
+//     //     }
+//     //     str += `${arr[i]}\n`;
+//     // }
+
+//     return str;
+// }
+
+// console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY'));
+
+
+// let str = 'some';
+// let strObj = new String(str);
+
+// console.log(typeof(str));
+// console.log(typeof(strObj));
+
+console.dir([1, 2, 3]);
+
+const soldier = {
+    health: 400,
+    armor: 100,
+    sayHello: function() {
+        console.log('Hello');
     }
-    const arr = str.split('');
-    const reversedArr = arr.reverse();
-    const reversedStr = reversedArr.join('');
+};
 
-    return reversedStr;
+const jonh = Object.create(soldier);
 
-}
-reverse(someString);
 
-const baseCurrencies = ['USD', 'EUR'];
-const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
-function availableCurr(arr, missingCurr) {
-    let str = '';
-    arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+// const jonh = {
+//     health: 100
+// };
 
-    arr.forEach(function(curr, i) {
-        if (curr !== missingCurr) {
-            str += `${curr}\n`;
-        }
-    });
+// jonh.__proto__ = soldier;
 
-    // Или
-    // for (let i = 0; i < arr.length; i++) {
-    //     if (arr[i] === missingCurr) {
-    //         continue;
-    //     }
-    //     str += `${arr[i]}\n`;
-    // }
+// Object.setPrototypeOf(jonh, soldier);
 
-    return str;
-}
+// console.log(jonh);
+// console.log(jonh.armor);
 
-console.log(availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY'));
+jonh.sayHello();
