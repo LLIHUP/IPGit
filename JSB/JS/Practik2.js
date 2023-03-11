@@ -816,81 +816,155 @@
 
 // Практика часть 4
 
-const personalMovieDB = {
-    count: 0,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false,
-    rememberMyFilms: function() {
-        for (let i = 0; i < 2; i++) {
-            const a = prompt('Один из последних просмотренных фильмов?', ''),
-                b = prompt('На сколько оцените его?', '');
-            if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-                personalMovieDB.movies[a] = b;
-                console.log('done');
-            } else {
-                console.log('error');
-                i--;
-            }
+// const personalMovieDB = {
+//     count: 0,
+//     movies: {},
+//     actors: {},
+//     genres: [],
+//     privat: false,
+//     rememberMyFilms: function() {
+//         for (let i = 0; i < 2; i++) {
+//             const a = prompt('Один из последних просмотренных фильмов?', ''),
+//                 b = prompt('На сколько оцените его?', '');
+//             if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//                 personalMovieDB.movies[a] = b;
+//                 console.log('done');
+//             } else {
+//                 console.log('error');
+//                 i--;
+//             }
 
 
-        }
-        console.log(personalMovieDB.movies);
-    },
-    start: function() {
-        personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
-        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
-            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//         }
+//         console.log(personalMovieDB.movies);
+//     },
+//     start: function() {
+//         personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+//         while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+//             personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-        }
-    },
-    detectPersonalLevel: function() {
-        {
-            if (personalMovieDB.count < 10) {
-                console.log('Просмотрено довольно мало фильмов');
-            } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-                console.log('Вы классический зритель');
-            } else if (personalMovieDB.count >= 30) {
-                console.log('Вы киноман');
-            } else {
-                console.log('Произошла ошибка');
-            }
-        }
-    },
-    showMyDB: function(hidden) {
-        if (!hidden) {
-            console.log(personalMovieDB);
-        }
-    },
-    toggleVisibleMyDB: function() {
-        if (personalMovieDB.privat) {
-            personalMovieDB.privat = false;
-        } else {
-            personalMovieDB.privat = true;
-        }
+//         }
+//     },
+//     detectPersonalLevel: function() {
+//         {
+//             if (personalMovieDB.count < 10) {
+//                 console.log('Просмотрено довольно мало фильмов');
+//             } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//                 console.log('Вы классический зритель');
+//             } else if (personalMovieDB.count >= 30) {
+//                 console.log('Вы киноман');
+//             } else {
+//                 console.log('Произошла ошибка');
+//             }
+//         }
+//     },
+//     showMyDB: function(hidden) {
+//         if (!hidden) {
+//             console.log(personalMovieDB);
+//         }
+//     },
+//     toggleVisibleMyDB: function() {
+//         if (personalMovieDB.privat) {
+//             personalMovieDB.privat = false;
+//         } else {
+//             personalMovieDB.privat = true;
+//         }
 
-    },
-    writeYourGenres: function() {
-        for (let i = 1; i <= 3; i++) {
-            let genre = prompt(`Ваш любимый жанр под номером ${i}`);
-            if (genre === '' || genre == null) {
-                console.log('Вы ввели не корректные данные! или не ввели их вообще');
-                i--;
-            } else {
-                personalMovieDB.genres[i - 1] = genre;
-            }
+//     },
+//     writeYourGenres: function() {
+//         for (let i = 1; i <= 3; i++) {
+//             let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+//             if (genre === '' || genre == null) {
+//                 console.log('Вы ввели не корректные данные! или не ввели их вообще');
+//                 i--;
+//             } else {
+//                 personalMovieDB.genres[i - 1] = genre;
+//             }
 
-            personalMovieDB.genres.forEach((item, i) => {
-                console.log(`Любимый жанр ${i+1} - это ${item}`);
-            });
+//             personalMovieDB.genres.forEach((item, i) => {
+//                 console.log(`Любимый жанр ${i+1} - это ${item}`);
+//             });
 
-        }
-    }
+//         }
+//     }
 
 
-};
+// };
 
 // personalMovieDB.start();
 // personalMovieDB.detectPersonalLevel();
 // personalMovieDB.rememberMyFilms();
+
+// const shoppingMallData = {
+//     shops: [{
+//             width: 10,
+//             length: 5
+//         },
+//         {
+//             width: 15,
+//             length: 7
+//         },
+//         {
+//             width: 20,
+//             length: 5
+//         },
+//         {
+//             width: 8,
+//             length: 10
+//         }
+//     ],
+//     height: 5,
+//     moneyPer1m3: 30,
+//     budget: 50000
+// };
+
+// function isBudgetEnough(data) {
+
+//     function isBudgetEnough(data) {
+//         // вычисляем общую площадь всех магазинов
+//         let totalArea = 0;
+//         for (let i = 0; i < data.shops.length; i++) {
+//             totalArea += data.shops[i].width * data.shops[i].length;
+//         }
+
+//         // вычисляем общий объем торгового центра
+//         let totalVolume = totalArea * data.height;
+
+//         // вычисляем стоимость отопления всего торгового центра
+//         let heatingCost = totalVolume * data.moneyPer1m3;
+
+//         // проверяем, хватает ли бюджета на отопление всего торгового центра
+//         if (heatingCost <= data.budget) {
+//             return 'Бюджета достаточно';
+//         } else {
+//             return 'Бюджета недостаточно';
+//         }
+//     }
+// }
+// isBudgetEnough(shoppingMallData);
+
+
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+
+function sortStudentsByGroups(arr) {
+    arr.sort();
+    const a = [],
+        b = [],
+        c = [],
+        rest = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (i < 3) {
+            a.push(arr[i]);
+        } else if (i < 6) {
+            b.push(arr[i]);
+        } else if (i < 9) {
+            c.push(arr[i]);
+        } else {
+            rest.push(arr[i]);
+        }
+    }
+    return [a, b, c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`];
+}
+
+console.log(sortStudentsByGroups(students));
