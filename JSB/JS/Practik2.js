@@ -944,27 +944,75 @@
 // isBudgetEnough(shoppingMallData);
 
 
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+// const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
 
-function sortStudentsByGroups(arr) {
-    arr.sort();
-    const a = [],
-        b = [],
-        c = [],
-        rest = [];
+// function sortStudentsByGroups(arr) {
+//     arr.sort();
+//     const a = [],
+//         b = [],
+//         c = [],
+//         rest = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        if (i < 3) {
-            a.push(arr[i]);
-        } else if (i < 6) {
-            b.push(arr[i]);
-        } else if (i < 9) {
-            c.push(arr[i]);
-        } else {
-            rest.push(arr[i]);
-        }
-    }
-    return [a, b, c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`];
+//     for (let i = 0; i < arr.length; i++) {
+//         if (i < 3) {
+//             a.push(arr[i]);
+//         } else if (i < 6) {
+//             b.push(arr[i]);
+//         } else if (i < 9) {
+//             c.push(arr[i]);
+//         } else {
+//             rest.push(arr[i]);
+//         }
+//     }
+//     return [a, b, c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`];
+// }
+
+// console.log(sortStudentsByGroups(students));
+
+
+
+// to string
+
+// 1
+console.log(typeof(String(null)));
+console.log(typeof(String(4)));
+
+// 2
+console.log(typeof(5 + ''));
+
+const num = 5;
+console.log('https://' + num);
+
+const fontSize = 26 + 'px';
+
+// to number
+
+//1
+console.log(typeof(Number('4')));
+
+// 2
+
+console.log(typeof(+'5'));
+
+// 3
+console.log(typeof(parseInt('15px', 10)));
+
+let ans = +prompt('ghghgh', '');
+
+// to boolean
+
+// 1
+let swic = null;
+if (swic) {
+    console.log('working...');
 }
 
-console.log(sortStudentsByGroups(students));
+swic = 1;
+if (swic) {
+    console.log('working...');
+}
+// 2
+console.log(typeof(Boolean('4')));
+
+// 3
+console.log(typeof(!!'ddddd'));
