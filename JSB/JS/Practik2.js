@@ -973,46 +973,46 @@
 
 // to string
 
-// 1
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
+// // 1
+// console.log(typeof(String(null)));
+// console.log(typeof(String(4)));
 
-// 2
-console.log(typeof(5 + ''));
+// // 2
+// console.log(typeof(5 + ''));
 
-const num = 5;
-console.log('https://' + num);
+// const num = 5;
+// console.log('https://' + num);
 
-const fontSize = 26 + 'px';
+// const fontSize = 26 + 'px';
 
-// to number
+// // to number
 
-//1
-console.log(typeof(Number('4')));
+// //1
+// console.log(typeof(Number('4')));
 
-// 2
+// // 2
 
-console.log(typeof(+'5'));
+// console.log(typeof(+'5'));
 
-// 3
-console.log(typeof(parseInt('15px', 10)));
+// // 3
+// console.log(typeof(parseInt('15px', 10)));
 
-let ans = +prompt('ghghgh', '');
+// let ans = +prompt('ghghgh', '');
 
-// to boolean
+// // to boolean
 
-// 1
-let swic = null;
-if (swic) {
-    console.log('working...');
-}
+// // 1
+// let swic = null;
+// if (swic) {
+//     console.log('working...');
+// }
 
-swic = 1;
-if (swic) {
-    console.log('working...');
-}
-// 2
-console.log(typeof(Boolean('4')));
+// swic = 1;
+// if (swic) {
+//     console.log('working...');
+// }
+// // 2
+// console.log(typeof(Boolean('4')));
 
-// 3
-console.log(typeof(!!'ddddd'));
+// // 3
+// console.log(typeof(!!'ddddd'));
