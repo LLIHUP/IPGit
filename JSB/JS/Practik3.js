@@ -80,7 +80,7 @@ function isOpen(prop) {
 console.log(isOpen(restorantData.openNow));
 
 
-debugger
+
 
 function isAverageLunchPriceTrue(fDish, sDish, average) {
 
@@ -107,10 +107,12 @@ console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1]
 
 
 
+debugger
 
 function transferWaitors(data) {
+    debugger
 
-    const copy = JSON.parse(JSON.stringify(data));
+    const copy = window.structuredClone(data);
 
 
     copy.waitors[0] = { name: 'Mike', age: 32 };
